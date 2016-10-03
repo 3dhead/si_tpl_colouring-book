@@ -1,0 +1,28 @@
+<section class="colouringbook">
+  <h1 class="colouringbook__title">Colouring Book</h1>
+  <div 
+    class="colouringbook__canvas"
+    pw-canvas 
+    options="colorbook.app.options" 
+    version="colorbook.version"
+  ></div>
+  <div 
+    class="colouringbook__colors"
+    pw-color-selector="colorbook.app.colors" 
+    color="colorbook.app.options.color"
+  ></div>
+  <input 
+    type="range" 
+    min="1" max="50" 
+    ng-model="colorbook.app.options.lineWidth" 
+    class="colouringbook__range">
+  <button
+    class="colouringbook__undo-btn colouringbook__btn"
+    ng-click="colorbook.undo()"
+    ng-disabled="colorbook.version < 1"
+  ><ng-md-icon icon="undo"></ng-md-icon></button>
+  <button
+    class="colouringbook__clear-btn colouringbook__btn"
+    ng-click="colorbook.clear()"
+  ><ng-md-icon icon="delete_forever"></ng-md-icon></button>
+</section>
